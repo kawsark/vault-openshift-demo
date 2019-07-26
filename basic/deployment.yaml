@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment 
+metadata:
+  name: basic-example
+  namespace: vault-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: basic-example
+    spec:
+      serviceAccountName: k8s-app1
+      containers:
+        - name: app 
+          image: "kawsark/vault-example-init:0.0.7"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VAULT_ADDR
+              value: "http://vault.therealk.com:8200"
+            - name: VAULT_ROLE
+              value: "app1"
+            - name: SECRET_KEY
+              value: "database/creds/dba"
+            - name: VAULT_LOGIN_PATH
+              value: "auth/kubernetes/login"
