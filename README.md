@@ -1,5 +1,5 @@
 # vault-openshift-demo
-This repository provides supporting scripts and an example Golang application for the Vault OpenShift guide. These scripts can be run on a standard unix terminal. 
+This repository provides supporting scripts and an example Golang application for the Vault OpenShift guide blog post. These scripts can be run on a standard unix terminal. 
 
 ### Pre-requisites
 1. OpenShift `oc` CLI should be setup with administrative access.
@@ -15,6 +15,11 @@ export K8S_API_SERVER="https://master.ocp.example.org"
 export VAULT_ADDR="https://vault.example.org:8200"
 export VAULT_TOKEN="admin-or-root-token"
 
+# Clone repo and adjust permissions
+git clone https://github.com/kawsark/vault-openshift-demo.git
+cd vault-openshift-demo
+chmod +x *.sh
+
 # (Optional) Adjust variable default in env.sh
 vi env.sh
 
@@ -25,3 +30,8 @@ vi env.sh
 ./3_deploy_app.sh
 ```
 
+### Clean up
+Please ensure that the environment variables `K8S_API_SERVER`, `VAULT_ADDR` and `VAULT_TOKEN` are set properly. Then run the clean script.
+```
+./0_cleanup.sh
+```
