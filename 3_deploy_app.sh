@@ -2,8 +2,8 @@
 source ./env.sh
 
 # Create a deployment.yaml file:
-echo "Writing deployment.yaml file:"
-cat <<EOF> deployment.yaml
+echo "INFO: Writing deployment.yaml file:"
+cat <<EOF > deployment.yaml
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -35,9 +35,10 @@ EOF
 cat deployment.yaml
 
 # Create deployment and check that the application pod is running
+echo "INFO: Creating basic-example deployment"
 oc create -f deployment.yaml
 
-echo "Waiting 10 seconds for pod to deploy"
+echo "INFO: Waiting 10 seconds for pod to deploy"
 sleep 10
 
 pod=$(oc get pods -o json )
