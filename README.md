@@ -31,7 +31,8 @@ vi env.sh
 ```
 
 ### Clean up
-Please ensure that the environment variables `K8S_API_SERVER`, `VAULT_ADDR` and `VAULT_TOKEN` are set properly. Then run the clean script.
+Please ensure that the environment variables `K8S_API_SERVER`, `VAULT_ADDR` and `VAULT_TOKEN` are set properly. Then run the clean script. 
+- **Careful**: this will delete the OpenShift project, Vault Auth method and Vault secrets engine.
 ```
 ./0_cleanup.sh
 ```
