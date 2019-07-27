@@ -20,10 +20,10 @@ export VAULT_AUTH_PATH="ocp"
 export VAULT_SECRET_PATH="secret"
 
 # Role name in Vault for the application
-export VAULT_ROLE="app1-role"
+export VAULT_ROLE="$OC_SA_APP-role"
 
 # ACL policy to be enforced upon successful authentication
-export VAULT_POLICY="app1-policy"
+export VAULT_POLICY="$OC_SA_APP-policy"
 
 # Docker image and label for example application
 export IMAGE="kawsark/vault-example-init:0.0.7"
