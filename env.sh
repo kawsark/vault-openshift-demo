@@ -29,4 +29,4 @@ export VAULT_POLICY="$OC_SA_APP-policy"
 export IMAGE="kawsark/vault-example-init:0.0.7"
 
 # ~~~~~~ Do not adjust the following, it will get populated using previous values ~~~~~~
-export app_secret_path="${VAULT_SECRET_PATH}/${OC_APP_SA}"
+export app_secret_path="${VAULT_SECRET_PATH}/${OC_SA_APP}"

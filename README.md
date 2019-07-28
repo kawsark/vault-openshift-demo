@@ -4,7 +4,8 @@ This repository provides supporting scripts and an example Golang application fo
 ### Pre-requisites
 1. OpenShift `oc` CLI should be setup with administrative access.
 1. OpenShift API server `ca.crt` file should be in the current directory. For default installs this file is located in: `/etc/origin/master/ca.crt`. Please copt this file to the current directory. Example command: `sudo cp /etc/origin/master/ca.crt .`
-1. `curl` and `jq` utilities should be installed. 
+1. `curl` and `jq` utilities should be installed.
+    - Please see [download jq](https://stedolan.github.io/jq/download/) if not installed already.
 1. `vault` binary should be on your PATH. You can [download Vault binary here](https://www.vaultproject.io/downloads.html).
 1. Please adjust the environment variables under `Setup environment` appropriately.
 
@@ -19,6 +20,9 @@ export VAULT_TOKEN="admin-or-root-token"
 git clone https://github.com/kawsark/vault-openshift-demo.git
 cd vault-openshift-demo
 chmod +x *.sh
+
+# Copy the ca.crt file (please adjust path as needed)
+sudo cp /etc/origin/master/ca.crt .
 
 # (Optional) Adjust variable default in env.sh
 vi env.sh

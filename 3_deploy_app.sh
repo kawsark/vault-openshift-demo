@@ -41,4 +41,7 @@ oc create -f deployment.yaml
 echo "INFO: Waiting 10 seconds for pod to deploy"
 sleep 10
 
-pod=$(oc get pods -o json )
+pod=$(oc get pods --selector app=basic-example -o json | jq -r .items[0].metadata.name)
+echo "INFO: Pod name is: ${pod}. Getting logs:"
+
+oc logs ${pod}
