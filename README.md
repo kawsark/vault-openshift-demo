@@ -1,5 +1,5 @@
 # vault-openshift-demo
-This repository provides supporting scripts and an example Golang application for the Vault OpenShift guide blog post. These scripts can be run on a standard unix terminal. 
+This repository provides supporting scripts and an example Golang application for the [Vault Kubernetes Auth Method](https://medium.com/hashicorp-engineering/vault-kubernetes-auth-method-for-openshift-9b9155590a6d) blog post. These scripts can be run on a standard unix terminal. 
 
 ### Pre-requisites
 1. OpenShift `oc` CLI should be setup with administrative access.
